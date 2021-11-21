@@ -509,10 +509,10 @@ def rintanganX():
     glEnd()
 #function iterasi
 def iterate():
-    glViewport(0, 0,2000,2500)  #mengatur area pandang
+    glViewport(0, 0,1920,1080)  #mengatur area pandang
     glMatrixMode(GL_PROJECTION)
     glLoadIdentity()
-    glOrtho(0.0, 15800, 0.0, 19200, 0.0, 1.0) #mengatur berapa blok yang digunakan
+    glOrtho(0.0, 2500, 0.0, 1400, 0.0, 1.0) #mengatur berapa blok yang digunakan
     glMatrixMode (GL_MODELVIEW)
     glLoadIdentity()
 
@@ -581,7 +581,7 @@ def showScreen():
 
 glutInit() #inisialisasi glut
 glutInitDisplayMode(GLUT_RGBA)
-glutInitWindowSize(1920,540) #engatur ukuran window
+glutInitWindowSize(1920,1080) #engatur ukuran window
 glutInitWindowPosition(0, 0) #mengatur letak window
 wind = glutCreateWindow("GLUT Program") #memberi nama pada window
 glutDisplayFunc(showScreen) 
