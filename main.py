@@ -16,59 +16,89 @@ def tanah():
     glEnd()
 
 #Kotak yang berisi cerita
-def kotak1():
-    glBegin(GL_POLYGON) 
+teks_1 = "Narasi Teks 1"
+def Cerita_1(teks):
+    glColor3f(0,0,0)
+    glRasterPos( 700+pos_x,800)
     glColor3ub(255, 215,0)
+    glBegin(GL_POLYGON)
     glVertex2f(600+pos_x,900)
     glVertex2f(600+pos_x,700)
     glVertex2f(1200+pos_x,700)
     glVertex2f(1200+pos_x,900)
     glEnd()
+    for i in teks:
+        glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, ord(i))
 
-def kotak2():
-    glBegin(GL_POLYGON) 
+teks_2 = "Narasi Teks 2"
+def Cerita_2(teks):
+    glColor3f(0,0,0)
+    glRasterPos( 2500+pos_x,800)
     glColor3ub(255, 215,0)
+    glBegin(GL_POLYGON)
     glVertex2f(2400+pos_x,700)
     glVertex2f(2400+pos_x,900)
     glVertex2f(3000+pos_x,900)
     glVertex2f(3000+pos_x,700)
     glEnd()
+    for i in teks:
+        glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, ord(i))
 
-def kotak3():
-    glBegin(GL_POLYGON) 
+teks_3 = "Narasi Teks 3"
+def Cerita_3(teks):
+    glColor3f(0,0,0)
+    glRasterPos( 4500+pos_x,800)
     glColor3ub(255, 215,0)
+    glBegin(GL_POLYGON)
     glVertex2f(4400+pos_x,700)
     glVertex2f(4400+pos_x,900)
     glVertex2f(5000+pos_x,900)
     glVertex2f(5000+pos_x,700)
     glEnd()
+    for i in teks:
+        glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, ord(i))
 
-def kotak4():
-    glBegin(GL_POLYGON) 
+teks_4 = "Narasi Teks 4"
+def Cerita_4(teks):
+    glColor3f(0,0,0)
+    glRasterPos( 6500+pos_x,800)
     glColor3ub(255, 215,0)
+    glBegin(GL_POLYGON)
     glVertex2f(6400+pos_x,700)
     glVertex2f(6400+pos_x,900)
     glVertex2f(7000+pos_x,900)
     glVertex2f(7000+pos_x,700)
     glEnd()
+    for i in teks:
+        glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, ord(i))
 
-def kotak5():
-    glBegin(GL_POLYGON) 
+teks_5 = "Narasi Teks 5"
+def Cerita_5(teks):
+    glColor3f(0,0,0)
+    glRasterPos( 8500+pos_x,800)
     glColor3ub(255, 215,0)
+    glBegin(GL_POLYGON)
     glVertex2f(8400+pos_x,700)
     glVertex2f(8400+pos_x,900)
     glVertex2f(9000+pos_x,900)
     glVertex2f(9000+pos_x,700)
     glEnd()
+    for i in teks:
+        glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, ord(i))
 
-def kotak6():
-    glBegin(GL_POLYGON) 
+teks_6 = "Narasi Teks 6"
+def Cerita_6(teks):
+    glColor3f(0,0,0)
+    glRasterPos( 10300+pos_x,800)
     glColor3ub(255, 215,0)
+    glBegin(GL_POLYGON)
     glVertex2f(10200+pos_x,700)
     glVertex2f(10200+pos_x,900)
     glVertex2f(10800+pos_x,900)
     glVertex2f(10800+pos_x,700)
     glEnd()
+    for i in teks:
+        glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, ord(i))
 
 #LAYER 1
 def RumahBagianBawah():
@@ -758,12 +788,12 @@ def showScreen():
     glLoadIdentity()
     iterate()
     tanah()
-    kotak1()
-    kotak2()
-    kotak3()
-    kotak4()
-    kotak5()
-    kotak6()
+    Cerita_1(teks_1)
+    Cerita_2(teks_2)
+    Cerita_3(teks_3)
+    Cerita_4(teks_4)
+    Cerita_5(teks_5)
+    Cerita_6(teks_6)
     RumahBagianBawah()
     RumahBagianTengah()
     Atap()
@@ -819,7 +849,7 @@ glutInit() #inisialisasi glut
 glutInitDisplayMode(GLUT_RGBA)
 glutInitWindowSize(1920,1080) #engatur ukuran window
 glutInitWindowPosition(0, 0) #mengatur letak window
-wind = glutCreateWindow("GLUT Program Ironman") #memberi nama pada window
+wind = glutCreateWindow("CitraLoka") #memberi nama pada window
 glutDisplayFunc(showScreen) 
 glutIdleFunc(showScreen) 
 glutSpecialFunc(jump_button)
