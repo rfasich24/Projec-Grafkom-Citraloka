@@ -4,7 +4,7 @@ from OpenGL.GLUT import *
 from OpenGL.GLU import *
 from OpenGL.GLUT.freeglut import *
 
-#Kotak yang berisi cerita
+#Kotak yang berisi cerita dalam bentuk teks
 def Cerita_1():
     judul = "PERISTIWA RENGASDENGKLOK"
     glColor3f(0,0,0)
@@ -18,7 +18,6 @@ def Cerita_1():
     glEnd()
     for i in judul:
         glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, ord(i))
-
 
 def Cerita_2():
     LatarBelakang = "Latar Belakang:"
@@ -46,7 +45,6 @@ def Cerita_2():
     for i in poin_3:
         glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, ord(i))
 
-
 def Cerita_3():
     kronologi = "Kronologi Kejadian"
     glColor3f(0,0,0)
@@ -60,7 +58,6 @@ def Cerita_3():
     glEnd()
     for i in kronologi:
         glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, ord(i))
-
 
 def Cerita_4():
     tanggal = "15 Agustus 2945"
@@ -88,7 +85,6 @@ def Cerita_4():
     for i in peristiwa_3:
         glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, ord(i))
     
-
 def Cerita_5():
     tanggal = "16 Agustus 1945"
     peristiwa_1 = "- Perbedaan pendapat membuat golongan muda membawa Soekarno-Hatta ke Rengasdengklok agar jauh dari jepang/sekutu"
@@ -119,7 +115,6 @@ def Cerita_5():
     for i in peristiwa_4:
         glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, ord(i))
 
-
 def Cerita_6():
     tanggal = "17 Agustus 1945"
     ending = "Akhirnya Proklamasi berhasil diadakan pada tanggal 17 Agustus 1945 di Jakarta"
@@ -138,6 +133,7 @@ def Cerita_6():
     for i in ending:
         glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, ord(i))
 
+#Membuat jurang menggunakan GL_QUADS
 def canyon():
     glBegin(GL_QUADS)
     glColor3ub(0,255,255)
@@ -167,7 +163,7 @@ def canyon():
     glVertex2f(8000+pos_x,0)
     glEnd()
 
-#Objek-Objek
+#Membuat objek tanah menggunakan GL_POLYGON
 def tanah():
     glBegin(GL_POLYGON) 
     glColor3ub(128,0,0)
@@ -177,12 +173,12 @@ def tanah():
     glVertex2f(13000+pos_x,0)
     glEnd()
 
+#membuat karakter loka menggunakan GL_QUADS
 def karakter():
-    global ulang, jump, isjumping
-    # glScaled(2,2,0)
+    global ulang, jump, isJumping
     if ulang == True :
         ulang = False
-        isjumping = False
+        isJumping = False
         jump = 0
         glTranslated(100,80+jump,0)
     else :
@@ -217,7 +213,6 @@ def karakter():
     glVertex2f(210,110)
     glVertex2f(110,110)
 
-#outline
     glColor3ub(50,50,50)
     glVertex2f(90,20)
     glVertex2f(120,20)
@@ -370,6 +365,7 @@ def karakter():
 
     glEnd()
 
+#Membuat bendera dan tiang bendera dengan menggunakan GL_QUADS
 def TiangBendera():
     glBegin(GL_QUADS)
     glColor3ub(0,0,0)
@@ -397,6 +393,7 @@ def BenderaPutih():
     glVertex2f(11100+pos_x,700)
     glEnd()
 
+#Membuat objek awan menggunakan GL_QUADS
 def Awan():
     glBegin(GL_QUADS)
     glColor3ub(175,162,255)
@@ -414,11 +411,7 @@ def Awan():
     glVertex2f(2000+pos_x,750)
     glVertex2f(2050+pos_x,750)
     glVertex2f(2050+pos_x,700) 
-    glEnd()
 
-def Awan2():
-    glBegin(GL_QUADS)
-    glColor3ub(175,162,255)
     glVertex2f(2950+pos_x,500)
     glVertex2f(2950+pos_x,550)
     glVertex2f(3150+pos_x,550)
@@ -438,11 +431,7 @@ def Awan2():
     glVertex2f(3450+pos_x,600)
     glVertex2f(3500+pos_x,600)
     glVertex2f(3500+pos_x,550) 
-    glEnd()
 
-def Awan3():
-    glBegin(GL_QUADS)
-    glColor3ub(175,162,255)
     glVertex2f(3800+pos_x,650)
     glVertex2f(3800+pos_x,750)
     glVertex2f(4100+pos_x,750)
@@ -457,11 +446,7 @@ def Awan3():
     glVertex2f(4000+pos_x,600) 
     glVertex2f(3850+pos_x,600)
     glVertex2f(3850+pos_x,650)
-    glEnd()
 
-def Awan4():
-    glBegin(GL_QUADS)
-    glColor3ub(175,162,255)
     glVertex2f(4500+pos_x,500)
     glVertex2f(4500+pos_x,550)
     glVertex2f(4800+pos_x,550)
@@ -476,7 +461,7 @@ def Awan4():
     glVertex2f(4650+pos_x,500)
     glVertex2f(4700+pos_x,500)
     glVertex2f(4700+pos_x,450)
-#opsi
+
     glVertex2f(5250+pos_x,500)
     glVertex2f(5250+pos_x,550)
     glVertex2f(5400+pos_x,550)
@@ -573,25 +558,7 @@ def Awan4():
     glVertex2f(0+pos_x,0) 
     glEnd()
 
-def coba() :
-    glBegin(GL_QUADS)
-    glColor3ub(255,255,255)
-    glVertex2f(170,100+jump)
-    glVertex2f(340,100+jump)
-    glVertex2f(340,310+jump)
-    glVertex2f(170,310+jump)
-    glEnd()
-
-def coba2():
-    glBegin(GL_QUADS)
-    glColor3ub(255,255,255)
-    glVertex2f(2500 + pos_x,200)
-    glVertex2f(2700 + pos_x,200)
-    glVertex2f(2700 + pos_x,250)
-    glVertex2f(2500 + pos_x,250)
-    glEnd()
-
-#Function even handling
+#Timer untuk visualisasi loncat dan jatuh
 def jumping(value) : #timer loncat keatas
     global jump, nabrak, right, left, pos_x
     if jump < 300  :
@@ -632,6 +599,7 @@ def fall_to_canyon(value):
         return 
     glutTimerFunc(10,fall_to_canyon,0)
 
+#Function event handling menggunakan keyboard up, right, left
 def keyboard(key,x,y):
     global jump, isJumping, pos_x, nabrak, obj_x1, obj_x2, right, left
     if key == GLUT_KEY_UP and isJumping is not True :
@@ -692,7 +660,7 @@ def keyboard(key,x,y):
                 pos_x +=0
                 fall_to_canyon(0)
 
-#function menampilkan objek
+#Deklarasi Variabel
 jump = 0
 isJumping = False
 pos_x = 0
@@ -731,9 +699,6 @@ def showScreen():
     BenderaMerah()
     BenderaPutih()
     Awan()
-    Awan2()
-    Awan3()
-    Awan4()
     karakter()
     glutSwapBuffers()
     
